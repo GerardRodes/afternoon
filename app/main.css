@@ -1,0 +1,47 @@
+html, body, #app {
+  width: 100%;
+  height: 100%;
+}
+#app {
+  position: relative;
+  overflow: hidden;
+}
+.is-canvas {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+/*controls*/
+#controls {
+  background-color: rgba(0,0,0,0.85);
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 8px 12px;
+  box-shadow: 0px 0px 2px #333;
+  z-index: 100;
+}
+
+#controls .btn {
+  background: transparent;
+  color: #ccc;
+  font-size: .9em;
+  border: 1px solid #555;
+  border-radius: 3px;
+  transition: .15s;
+  cursor: pointer;
+}
+#controls .btn:hover,
+#controls .btn.active {
+  background: #ccc;
+  color: #333;
+}
+#controls .btn:focus {
+  outline: 0;
+}
