@@ -1,2 +1,2 @@
 # afternoon
-who know how it's gonna end
+who knows how it's gonna end
