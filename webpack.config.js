@@ -28,7 +28,10 @@ module.exports = {
   },
   resolve : {
     extensions: ['','.js'],
-    root: path.resolve('./app/modules')
+    root: path.resolve(__dirname, 'app'),
+    alias: {
+      shapes: path.resolve(__dirname, 'app/modules/shapes')
+    }
   },
   plugins: [HTMLWebpackPluginConfig]
 }

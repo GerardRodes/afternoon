@@ -50,21 +50,24 @@
 
 	__webpack_require__(5);
 
-	var _normalize = __webpack_require__(7);
-
-	var _normalize2 = _interopRequireDefault(_normalize);
+	__webpack_require__(7);
 
 	var _Canvas = __webpack_require__(9);
 
 	var _Canvas2 = _interopRequireDefault(_Canvas);
 
+	var _Control = __webpack_require__(15);
+
+	var _Control2 = _interopRequireDefault(_Control);
+
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-	var canvas = new _Canvas2.default('main');
-
-	console.dir(canvas);
+	var canvas = new _Canvas2.default('main'),
+	    control = new _Control2.default('#controls', canvas);
 
 	document.getElementById('app').append(canvas.element);
+	console.dir(canvas);
+	console.dir(control);
 
 /***/ },
 /* 1 */
@@ -430,8 +433,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../node_modules/css-loader/index.js?minimize!./main.css", function() {
-				var newContent = require("!!./../node_modules/css-loader/index.js?minimize!./main.css");
+			module.hot.accept("!!./../css-loader/index.js?minimize!./normalize.css", function() {
+				var newContent = require("!!./../css-loader/index.js?minimize!./normalize.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -449,7 +452,7 @@
 
 
 	// module
-	exports.push([module.id, "", ""]);
+	exports.push([module.id, "/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}", ""]);
 
 	// exports
 
@@ -470,8 +473,8 @@
 	if(false) {
 		// When the styles change, update the <style> tags
 		if(!content.locals) {
-			module.hot.accept("!!./../css-loader/index.js?minimize!./normalize.css", function() {
-				var newContent = require("!!./../css-loader/index.js?minimize!./normalize.css");
+			module.hot.accept("!!./../node_modules/css-loader/index.js?minimize!./main.css", function() {
+				var newContent = require("!!./../node_modules/css-loader/index.js?minimize!./main.css");
 				if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
 				update(newContent);
 			});
@@ -489,14 +492,14 @@
 
 
 	// module
-	exports.push([module.id, "/*! normalize.css v5.0.0 | MIT License | github.com/necolas/normalize.css */html{font-family:sans-serif;line-height:1.15;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,footer,header,nav,section{display:block}h1{font-size:2em;margin:.67em 0}figcaption,figure,main{display:block}figure{margin:1em 40px}hr{box-sizing:content-box;height:0;overflow:visible}pre{font-family:monospace,monospace;font-size:1em}a{background-color:transparent;-webkit-text-decoration-skip:objects}a:active,a:hover{outline-width:0}abbr[title]{border-bottom:none;text-decoration:underline;text-decoration:underline dotted}b,strong{font-weight:inherit;font-weight:bolder}code,kbd,samp{font-family:monospace,monospace;font-size:1em}dfn{font-style:italic}mark{background-color:#ff0;color:#000}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}audio,video{display:inline-block}audio:not([controls]){display:none;height:0}img{border-style:none}svg:not(:root){overflow:hidden}button,input,optgroup,select,textarea{font-family:sans-serif;font-size:100%;line-height:1.15;margin:0}button,input{overflow:visible}button,select{text-transform:none}[type=reset],[type=submit],button,html [type=button]{-webkit-appearance:button}[type=button]::-moz-focus-inner,[type=reset]::-moz-focus-inner,[type=submit]::-moz-focus-inner,button::-moz-focus-inner{border-style:none;padding:0}[type=button]:-moz-focusring,[type=reset]:-moz-focusring,[type=submit]:-moz-focusring,button:-moz-focusring{outline:1px dotted ButtonText}fieldset{border:1px solid silver;margin:0 2px;padding:.35em .625em .75em}legend{box-sizing:border-box;color:inherit;display:table;max-width:100%;padding:0;white-space:normal}progress{display:inline-block;vertical-align:baseline}textarea{overflow:auto}[type=checkbox],[type=radio]{box-sizing:border-box;padding:0}[type=number]::-webkit-inner-spin-button,[type=number]::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}[type=search]::-webkit-search-cancel-button,[type=search]::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}details,menu{display:block}summary{display:list-item}canvas{display:inline-block}[hidden],template{display:none}", ""]);
+	exports.push([module.id, "#app,body,html{width:100%;height:100%}html *{font-family:monospace}h2{font-size:1.5em;margin-bottom:10px}strong{font-weight:700}#app{position:relative;overflow:hidden}.is-canvas{position:absolute;top:0;bottom:0;left:0;right:0;width:100%;height:100%;z-index:0}#controls{background-color:rgba(0,0,0,.85);position:fixed;top:0;right:0;padding:8px 12px;box-shadow:0 0 2px #333;z-index:100}#controls .btn{background:transparent;color:#ccc;font-size:.9em;border:1px solid #555;border-radius:3px;transition:.15s;cursor:pointer}#controls .btn.active,#controls .btn:hover{background:#ccc;color:#333}#controls .btn:focus{outline:0}#controls #shapes{margin-bottom:5px}#state-status{position:fixed;bottom:0;left:0;padding:8px 12px;background-color:rgba(0,0,0,.85);box-shadow:0 0 2px #333;z-index:100;color:#ccc;font-size:.9em;letter-spacing:.05em;overflow-x:hidden;pointer-events:none}#state-status .value-wrapper{display:inline-block;width:310px;position:relative;margin-left:1rem;margin-bottom:5px}#state-status .value-wrapper .prop-value{white-space:nowrap;display:inline-block}#state-status #mousepath .value-wrapper{height:14px}#state-status #mousepath .value-wrapper .prop-value{position:absolute;height:14px;right:0;bottom:-1px}", ""]);
 
 	// exports
 
 
 /***/ },
 /* 9 */
-/***/ function(module, exports) {
+/***/ function(module, exports, __webpack_require__) {
 
 	'use strict';
 
@@ -506,6 +509,24 @@
 
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
+	var _Line = __webpack_require__(10);
+
+	var _Line2 = _interopRequireDefault(_Line);
+
+	var _Free = __webpack_require__(12);
+
+	var _Free2 = _interopRequireDefault(_Free);
+
+	var _Circle = __webpack_require__(13);
+
+	var _Circle2 = _interopRequireDefault(_Circle);
+
+	var _Rectangle = __webpack_require__(14);
+
+	var _Rectangle2 = _interopRequireDefault(_Rectangle);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 	var Canvas = function () {
@@ -513,6 +534,12 @@
 	    _classCallCheck(this, Canvas);
 
 	    this.element = this.createCanvas(id);
+	    this.ctx = this.element.getContext('2d');
+	    this.shapes = [];
+
+	    this.bindEvents();
+	    this.resizeCanvas();
+	    this.update();
 	  }
 
 	  _createClass(Canvas, [{
@@ -520,17 +547,530 @@
 	    value: function createCanvas(id) {
 	      var canvas = document.createElement('canvas');
 	      canvas.setAttribute('id', id);
+	      canvas.classList.add('is-canvas');
 	      return canvas;
 	    }
+	  }, {
+	    key: 'resizeCanvas',
+	    value: function resizeCanvas() {
+	      var data = this.ctx.getImageData(0, 0, this.element.width, this.element.height);
 
-	    // methods
+	      this.element.style.width = document.documentElement.clientWidth + 'px';
+	      this.element.style.height = document.documentElement.clientHeight + 'px';
+	      this.element.width = document.documentElement.clientWidth;
+	      this.element.height = document.documentElement.clientHeight;
 
+	      this.ctx.putImageData(data, 0, 0);
+	    }
+	  }, {
+	    key: 'bindEvents',
+	    value: function bindEvents() {
+	      var _this = this;
+
+	      window.addEventListener('load', function () {
+	        return _this.resizeCanvas();
+	      });
+	      window.addEventListener('resize', function () {
+	        return _this.resizeCanvas();
+	      });
+	    }
+	  }, {
+	    key: 'draw',
+	    value: function draw(type, params) {
+	      var shape = null,
+	          id = this.shapes.length,
+	          attributes = params.attributes ? params.attributes : {};
+
+	      switch (type) {
+	        case 'line':
+	          shape = new _Line2.default(id, attributes, params.from.x, params.from.y, params.to.x, params.to.y);
+	          break;
+
+	        case 'circle':
+	          shape = new _Circle2.default(id, attributes, params.at.x, params.at.y, params.radius);
+	          break;
+
+	        case 'rectangle':
+	          shape = new _Rectangle2.default(id, attributes, params.from.x, params.from.y, params.to.x, params.to.y);
+	          break;
+
+	        case 'free':
+	          shape = new _Free2.default(id, attributes, params.path);
+	          break;
+	      }
+
+	      this.shapes.push(shape);
+	      this.update();
+	    }
+	  }, {
+	    key: 'update',
+	    value: function update() {
+	      var _this2 = this;
+
+	      this.ctx.clearRect(0, 0, this.element.width, this.element.height);
+	      this.shapes.forEach(function (shape) {
+	        switch (shape.type) {
+	          case 'line':
+	            _this2.ctx.beginPath();
+	            _this2.ctx.moveTo(shape.coor.start.x, shape.coor.start.y);
+	            _this2.ctx.lineTo(shape.coor.end.x, shape.coor.end.y);
+	            _this2.ctx.stroke();
+	            break;
+
+	          case 'circle':
+	            _this2.ctx.beginPath();
+	            _this2.ctx.arc(shape.coor.start.x, shape.coor.start.y, shape.radius, 0, 2 * Math.PI);
+	            _this2.ctx.stroke();
+	            break;
+
+	          case 'rectangle':
+	            _this2.ctx.beginPath();
+	            _this2.ctx.rect(shape.coor.start.x, shape.coor.start.y, shape.coor.end.x - shape.coor.start.x, shape.coor.end.y - shape.coor.start.y);
+	            _this2.ctx.stroke();
+	            break;
+
+	          case 'free':
+	            _this2.ctx.beginPath();
+	            _this2.ctx.moveTo(shape.coor.start.x, shape.coor.start.y);
+	            shape.coor.path.forEach(function (dot) {
+	              _this2.ctx.lineTo(dot.x, dot.y);
+	            });
+	            _this2.ctx.stroke();
+	            break;
+	        }
+	      });
+
+	      this.shapes = this.shapes.filter(function (shape) {
+	        return shape.attributes.volatile != true;
+	      });
+	    }
+	  }, {
+	    key: 'clear',
+	    value: function clear() {
+	      this.shapes = [];
+	      this.update();
+	    }
 	  }]);
 
 	  return Canvas;
 	}();
 
 	exports.default = Canvas;
+
+/***/ },
+/* 10 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Shape2 = __webpack_require__(11);
+
+	var _Shape3 = _interopRequireDefault(_Shape2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Line = function (_Shape) {
+	  _inherits(Line, _Shape);
+
+	  function Line(id, attributes, fromX, fromY, toX, toY) {
+	    _classCallCheck(this, Line);
+
+	    var _this = _possibleConstructorReturn(this, (Line.__proto__ || Object.getPrototypeOf(Line)).call(this, id, attributes, fromX, fromY));
+
+	    _this.type = 'line';
+	    _this.coor.end = {
+	      x: toX,
+	      y: toY
+	    };
+
+	    return _this;
+	  }
+
+	  return Line;
+	}(_Shape3.default);
+
+	exports.default = Line;
+
+/***/ },
+/* 11 */
+/***/ function(module, exports) {
+
+	"use strict";
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Shape = function Shape(id, attributes, x, y) {
+	  _classCallCheck(this, Shape);
+
+	  this.id = id;
+	  this.attributes = attributes;
+	  this.coor = {
+	    start: {
+	      x: x,
+	      y: y
+	    }
+	  };
+	};
+
+	exports.default = Shape;
+
+/***/ },
+/* 12 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Shape2 = __webpack_require__(11);
+
+	var _Shape3 = _interopRequireDefault(_Shape2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Free = function (_Shape) {
+	  _inherits(Free, _Shape);
+
+	  function Free(id, attributes, path) {
+	    _classCallCheck(this, Free);
+
+	    var _this = _possibleConstructorReturn(this, (Free.__proto__ || Object.getPrototypeOf(Free)).call(this, id, attributes, path[0].x, path[0].y));
+
+	    _this.type = 'free';
+	    _this.coor.path = path;
+	    return _this;
+	  }
+
+	  return Free;
+	}(_Shape3.default);
+
+	exports.default = Free;
+
+/***/ },
+/* 13 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Shape2 = __webpack_require__(11);
+
+	var _Shape3 = _interopRequireDefault(_Shape2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Circle = function (_Shape) {
+	  _inherits(Circle, _Shape);
+
+	  function Circle(id, attributes, centerX, centerY, radius) {
+	    _classCallCheck(this, Circle);
+
+	    var _this = _possibleConstructorReturn(this, (Circle.__proto__ || Object.getPrototypeOf(Circle)).call(this, id, attributes, centerX, centerY));
+
+	    _this.type = 'circle';
+	    _this.radius = radius;
+
+	    return _this;
+	  }
+
+	  return Circle;
+	}(_Shape3.default);
+
+	exports.default = Circle;
+
+/***/ },
+/* 14 */
+/***/ function(module, exports, __webpack_require__) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _Shape2 = __webpack_require__(11);
+
+	var _Shape3 = _interopRequireDefault(_Shape2);
+
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+	var Rectangle = function (_Shape) {
+	  _inherits(Rectangle, _Shape);
+
+	  function Rectangle(id, attributes, fromX, fromY, toX, toY) {
+	    _classCallCheck(this, Rectangle);
+
+	    var _this = _possibleConstructorReturn(this, (Rectangle.__proto__ || Object.getPrototypeOf(Rectangle)).call(this, id, attributes, fromX, fromY));
+
+	    _this.type = 'rectangle';
+	    _this.coor.end = {
+	      x: toX,
+	      y: toY
+	    };
+
+	    return _this;
+	  }
+
+	  return Rectangle;
+	}(_Shape3.default);
+
+	exports.default = Rectangle;
+
+/***/ },
+/* 15 */
+/***/ function(module, exports) {
+
+	'use strict';
+
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+
+	var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+	function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr2 = Array(arr.length); i < arr.length; i++) { arr2[i] = arr[i]; } return arr2; } else { return Array.from(arr); } }
+
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+	var Control = function () {
+	  function Control(containerSelector, canvas) {
+	    _classCallCheck(this, Control);
+
+	    this.container = document.querySelector(containerSelector);
+	    this.canvas = canvas;
+	    this.shapes = [].concat(_toConsumableArray(document.querySelectorAll(containerSelector + ' .shape')));
+	    this.shapesModes = this.shapes.map(function (shape) {
+	      return shape.getAttribute('data-shape');
+	    });
+	    this.actions = [].concat(_toConsumableArray(document.querySelectorAll(containerSelector + ' .action')));
+	    this.stateContainer = document.querySelector('#state-status');
+	    this.state = {};
+
+	    this.setState('status', 'init');
+	    this.bindButtons();
+	    this.setState('status', 'ready');
+	  }
+
+	  _createClass(Control, [{
+	    key: 'bindButtons',
+	    value: function bindButtons() {
+	      var _this = this;
+
+	      this.shapes.forEach(function (shape) {
+	        var type = shape.getAttribute('data-shape');
+	        shape.addEventListener('click', function () {
+	          _this.setState('mode', type);
+	          _this.update();
+	        });
+	      });
+
+	      this.actions.find(function (action) {
+	        return action.getAttribute('data-action') == 'clear';
+	      }).addEventListener('click', function () {
+	        _this.setState('mousepath', []);
+	        _this.canvas.clear();
+	      });
+
+	      this.canvas.element.addEventListener('mousedown', function (e) {
+	        _this.setState('mousedown', { x: e.x, y: e.y });
+	        _this.setState('mousepath', [{ x: e.x, y: e.y }]);
+	        _this.setState('mouseIs', 'down');
+
+	        if (_this.shapesModes.indexOf(_this.state.mode) > -1) {
+	          _this.setState('status', 'drawing');
+	        }
+	      });
+
+	      this.canvas.element.addEventListener('mouseup', function (e) {
+	        _this.setState('mouseup', { x: e.x, y: e.y });
+	        _this.setState('mouseIs', 'up');
+
+	        if (_this.state.status == 'drawing') {
+	          _this.askCanvasToDraw();
+	          _this.setState('status', 'ready');
+	        }
+	      });
+
+	      this.canvas.element.addEventListener('mousemove', function (e) {
+	        _this.setState('mouse', { x: e.x, y: e.y });
+
+	        if (_this.state.mouseIs == 'down') {
+	          _this.setState('mousepath', _this.state.mousepath.concat({ x: e.x, y: e.y }));
+	        }
+
+	        if (_this.state.status == 'drawing') {
+	          _this.renderPreview();
+	        }
+	      });
+	    }
+	  }, {
+	    key: 'renderPreview',
+	    value: function renderPreview() {
+	      var overrideConfig = {};
+
+	      switch (this.state.mode) {
+	        case 'line':
+	        case 'rectangle':
+	          overrideConfig.to = this.state.mouse;
+	          break;
+	        case 'circle':
+	          var radiusX = this.state.mousedown.x - this.state.mouse.x >= 0 ? this.state.mousedown.x - this.state.mouse.x : this.state.mouse.x - this.state.mousedown.x,
+	              radiusY = this.state.mousedown.y - this.state.mouse.y >= 0 ? this.state.mousedown.y - this.state.mouse.y : this.state.mouse.y - this.state.mousedown.y;
+
+	          overrideConfig.radius = radiusX >= radiusY ? radiusX : radiusY;
+	          break;
+	      }
+
+	      this.askCanvasToDraw(this.fuseObjects(overrideConfig, { attributes: { volatile: true } }));
+	    }
+	  }, {
+	    key: 'askCanvasToDraw',
+	    value: function askCanvasToDraw(extraOptions) {
+	      switch (this.state.mode) {
+	        case 'line':
+	          this.canvas.draw('line', this.fuseObjects({
+	            from: this.state.mousedown,
+	            to: this.state.mouseup
+	          }, extraOptions));
+	          break;
+	        case 'rectangle':
+	          this.canvas.draw('rectangle', this.fuseObjects({
+	            from: this.state.mousedown,
+	            to: this.state.mouseup
+	          }, extraOptions));
+	          break;
+	        case 'circle':
+	          var radius = void 0;
+	          if (this.state.mouseup) {
+	            var radiusX = this.state.mousedown.x - this.state.mouseup.x >= 0 ? this.state.mousedown.x - this.state.mouseup.x : this.state.mouseup.x - this.state.mousedown.x,
+	                radiusY = this.state.mousedown.y - this.state.mouseup.y >= 0 ? this.state.mousedown.y - this.state.mouseup.y : this.state.mouseup.y - this.state.mousedown.y;
+
+	            radius = radiusX >= radiusY ? radiusX : radiusY;
+	          }
+
+	          this.canvas.draw('circle', this.fuseObjects({
+	            at: this.state.mousedown,
+	            radius: radius
+	          }, extraOptions));
+	          break;
+	        case 'free':
+	          this.canvas.draw('free', this.fuseObjects({
+	            path: this.state.mousepath
+	          }, extraOptions));
+	          break;
+	      }
+	    }
+	  }, {
+	    key: 'update',
+	    value: function update() {
+	      var _this2 = this;
+
+	      this.shapes.forEach(function (shape) {
+	        _this2.state.mode == shape.getAttribute('data-shape') ? shape.classList.add('active') : shape.classList.remove('active');
+	      });
+	    }
+	  }, {
+	    key: 'renderState',
+	    value: function renderState() {
+	      for (var prop in this.state) {
+	        var propDiv = document.querySelector('#' + this.stateContainer.getAttribute('id') + ' #' + prop);
+
+	        if (propDiv == null) {
+	          propDiv = document.createElement('div');
+	          propDiv.setAttribute('id', prop);
+	          this.stateContainer.appendChild(propDiv);
+	        }
+
+	        var value = '';
+	        switch (_typeof(this.state[prop])) {
+	          case 'string':
+	            value = this.state[prop];
+	            break;
+	          case 'object':
+	            value = JSON.stringify(this.state[prop]);
+	            if (this.state[prop].constructor == Array) {
+	              value += ' - length:' + this.state[prop].length;
+	            }
+	            break;
+	        }
+
+	        var newHTML = '<div class="prop-wrapper"><div>' + prop + ':</div></div><div class="value-wrapper"><span class="prop-value" >' + value + '<span></div>';
+
+	        if (newHTML != propDiv.innerHTML) {
+	          propDiv.innerHTML = newHTML;
+	        }
+	      }
+	    }
+	  }, {
+	    key: 'setState',
+	    value: function setState(prop, value) {
+	      this.state[prop] = value;
+	      this.renderState();
+	    }
+	  }, {
+	    key: 'fuseObjects',
+	    value: function fuseObjects(target, source) {
+	      var newObject = {};
+
+	      for (var prop in target) {
+	        newObject[prop] = target[prop];
+	      }
+
+	      for (var _prop in source) {
+	        if (newObject[_prop] !== undefined && newObject[_prop].constructor == source[_prop].constructor && newObject[_prop].constructor === Object) {
+	          newObject[_prop] = this.fuseObjects(newObject[_prop], source[_prop]);
+	        } else {
+	          newObject[_prop] = source[_prop];
+	        }
+	      }
+
+	      return newObject;
+	    }
+	  }]);
+
+	  return Control;
+	}();
+
+	exports.default = Control;
 
 /***/ }
 /******/ ]);

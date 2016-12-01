@@ -1,9 +1,9 @@
-import Shape from 'Shape'
+import Shape from 'shapes/Shape'
 
 export default class Line extends Shape {
   
-  constructor(id, fromX, fromY, toX, toY){
-    super(id, fromX, fromY)
+  constructor(id, attributes, fromX, fromY, toX, toY){
+    super(id, attributes, fromX, fromY)
     
     this.type = 'line'
     this.coor.end = {

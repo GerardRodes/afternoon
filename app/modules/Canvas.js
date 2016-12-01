@@ -1,6 +1,7 @@
-import Line from 'Line'
-import Circle from 'Circle'
-import Rectangle from 'Rectangle'
+import Line from 'shapes/Line'
+import Free from 'shapes/Free'
+import Circle from 'shapes/Circle'
+import Rectangle from 'shapes/Rectangle'
 
 export default class Canvas {
   
@@ -39,20 +40,25 @@ export default class Canvas {
   
   draw(type, params){
     let shape = null,
-        id = this.shapes.length
-    
+        id = this.shapes.length,
+        attributes = params.attributes ? params.attributes : {}
+  
     switch(type){
       case 'line':
-        shape = new Line(id, params.from[0], params.from[1], params.to[0], params.to[1])
-        break;
+        shape = new Line(id, attributes, params.from.x, params.from.y, params.to.x, params.to.y)
+        break
       
       case 'circle':
-        shape = new Circle(id, params.at[0], params.at[1], params.radius)
-        break;
+        shape = new Circle(id, attributes, params.at.x, params.at.y, params.radius)
+        break
         
       case 'rectangle':
-        shape = new Rectangle(id, params.from[0], params.from[1], params.to[0], params.to[1])
-        break;
+        shape = new Rectangle(id, attributes, params.from.x, params.from.y, params.to.x, params.to.y)
+        break
+      
+      case 'free':
+        shape = new Free(id, attributes, params.path)
+        break
     }
     
     this.shapes.push(shape)
@@ -60,7 +66,7 @@ export default class Canvas {
   }
   
   update(){
-    this.clear()
+    this.ctx.clearRect(0, 0, this.element.width, this.element.height)
     this.shapes.forEach((shape) => {
       switch(shape.type){
         case 'line':
@@ -78,15 +84,27 @@ export default class Canvas {
           
         case 'rectangle':
           this.ctx.beginPath()
-          this.ctx.rect(shape.coor.start.x, shape.coor.start.y, shape.coor.end.x, shape.coor.end.y)
+          this.ctx.rect(shape.coor.start.x, shape.coor.start.y, shape.coor.end.x - shape.coor.start.x, shape.coor.end.y - shape.coor.start.y)
+          this.ctx.stroke()
+          break
+          
+        case 'free':
+          this.ctx.beginPath()
+          this.ctx.moveTo(shape.coor.start.x, shape.coor.start.y)
+          shape.coor.path.forEach(dot => {
+            this.ctx.lineTo(dot.x, dot.y)
+          })
           this.ctx.stroke()
           break
       }
     })
+    
+    this.shapes = this.shapes.filter(shape => shape.attributes.volatile != true)
   }
   
   clear(){
-    this.ctx.clearRect(0, 0, this.element.width, this.element.height)
+    this.shapes = []
+    this.update()
   }
   
 }
